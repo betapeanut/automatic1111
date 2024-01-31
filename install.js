@@ -53,6 +53,11 @@ module.exports = async (kernel) => {
         "https://github.com/cocktailpeanutlabs/fooocus.git"
       ]
     }
+  }, {
+    "method": "fs.share",
+    "params": {
+      "venv": "app/venv"
+    }
   })
   if (kernel.platform === "darwin" && kernel.arch === "x64") {
     o.run.push({
