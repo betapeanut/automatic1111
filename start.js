@@ -27,6 +27,12 @@ module.exports = async (kernel) => {
       params: {
         "url": "{{input.event[0]}}",
       }
+    }, {
+      method: "proxy.start",
+      params: {
+        name: "app",
+        uri: "{{local.url}}"
+      }
     }]
   }
 }
