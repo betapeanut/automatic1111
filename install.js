@@ -53,7 +53,8 @@ module.exports = async (kernel) => {
         "https://github.com/cocktailpeanutlabs/fooocus.git"
       ]
     }
-  }, {
+  })
+  o.run.push({
     "method": "fs.share",
     "params": {
       "venv": "app/venv"
