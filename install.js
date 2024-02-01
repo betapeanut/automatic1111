@@ -54,12 +54,6 @@ module.exports = async (kernel) => {
       ]
     }
   })
-  o.run.push({
-    "method": "fs.share",
-    "params": {
-      "venv": "app/venv"
-    }
-  })
   if (kernel.platform === "darwin" && kernel.arch === "x64") {
     o.run.push({
       "method": "fs.download",
@@ -92,6 +86,11 @@ module.exports = async (kernel) => {
       },
       "path": "app",
       "on": [{ "event": "/http:\/\/[0-9.:]+/", "kill": true }]
+    }
+  }, {
+    "method": "fs.share",
+    "params": {
+      "venv": "app/venv"
     }
   }, {
     "method": "notify",
